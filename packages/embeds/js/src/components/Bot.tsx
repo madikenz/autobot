@@ -217,11 +217,11 @@ const BotContent = (props: BotContentProps) => {
           onNewLogs={props.onNewLogs}
         />
       </div>
-      <Show
+      {/* <Show
         when={props.initialChatReply.typebot.settings.general.isBrandingEnabled}
       >
         <LiteBadge botContainer={botContainer} />
-      </Show>
+      </Show> */}
     </div>
   )
 }

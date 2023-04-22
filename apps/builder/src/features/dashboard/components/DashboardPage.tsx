@@ -25,25 +25,25 @@ export const DashboardPage = () => {
   const [preCheckoutPlan, setPreCheckoutPlan] =
     useState<PreCheckoutModalProps['selectedSubscription']>()
 
-  useEffect(() => {
-    const { subscribePlan, chats, storage, isYearly } = query as {
-      subscribePlan: Plan | undefined
-      chats: string | undefined
-      storage: string | undefined
-      isYearly: string | undefined
-    }
-    if (workspace && subscribePlan && user && workspace.plan === 'FREE') {
-      setIsLoading(true)
-      setPreCheckoutPlan({
-        plan: subscribePlan as 'PRO' | 'STARTER',
-        workspaceId: workspace.id,
-        additionalChats: chats ? parseInt(chats) : 0,
-        additionalStorage: storage ? parseInt(storage) : 0,
-        currency: guessIfUserIsEuropean() ? 'eur' : 'usd',
-        isYearly: isYearly === 'false' ? false : true,
-      })
-    }
-  }, [query, user, workspace])
+  // useEffect(() => {
+  //   const { subscribePlan, chats, storage, isYearly } = query as {
+  //     subscribePlan: Plan | undefined
+  //     chats: string | undefined
+  //     storage: string | undefined
+  //     isYearly: string | undefined
+  //   }
+  //   if (workspace && subscribePlan && user && workspace.plan === 'FREE') {
+  //     setIsLoading(true)
+  //     setPreCheckoutPlan({
+  //       plan: subscribePlan as 'PRO' | 'STARTER',
+  //       workspaceId: workspace.id,
+  //       additionalChats: chats ? parseInt(chats) : 0,
+  //       additionalStorage: storage ? parseInt(storage) : 0,
+  //       currency: guessIfUserIsEuropean() ? 'eur' : 'usd',
+  //       isYearly: isYearly === 'false' ? false : true,
+  //     })
+  //   }
+  // }, [query, user, workspace])
 
   return (
     <Stack minH="100vh">

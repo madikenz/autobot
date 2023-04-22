@@ -9,7 +9,7 @@
     "docker:nuke": "docker compose -f docker-compose.dev.yml down --volumes --remove-orphans",
     "lint": "turbo run lint",
     "dev": "pnpm docker:up && cross-env NEXT_PUBLIC_E2E_TEST=false turbo run dev --filter=builder... --filter=viewer... --parallel --no-cache",
-    "dev:mocking": "pnpm docker:up && cross-env NEXT_PUBLIC_E2E_TEST=true turbo run dev --filter=builder... --filter=viewer... --parallel --no-cache",
+    "dev:mocking": "pnpm docker:up && node node_modules/cross-env/src/bin/cross-env.js NEXT_PUBLIC_E2E_TEST=true turbo run dev --filter=builder... --filter=viewer... --parallel --no-cache",
     "build": "pnpm docker:up && turbo run build",
     "build:builder": "turbo run build --filter=builder... && turbo run build:env --filter=builder...",
     "build:viewer": "turbo run build --filter=viewer... && turbo run build:env --filter=viewer...",

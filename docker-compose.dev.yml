@@ -1,15 +1,15 @@
 version: '3.3'
 services:
   postgres:
-    image: postgres:13
+    image: postgres:alpine
     ports:
       - '5432:5432'
     restart: always
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: 'typebot'
-      POSTGRES_PASSWORD: 'typebot'
+      POSTGRES_DB: 'autobot'
+      POSTGRES_PASSWORD: 'qwerty'
   minio:
     image: minio/minio
     command: server /data --console-address ":9001"
