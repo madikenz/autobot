@@ -71,7 +71,10 @@ export const SocialLoginButtons = ({ providers }: Props) => {
       {providers?.google && (
         <Button
           leftIcon={<GoogleLogo />}
-          onClick={handleGoogleClick}
+          onClick={(e) => {
+            e.preventDefault()
+            handleGoogleClick()
+          }}
           data-testid="google"
           isLoading={
             ['loading', 'authenticated'].includes(status) ||
