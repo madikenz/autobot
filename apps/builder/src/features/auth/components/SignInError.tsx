@@ -17,6 +17,7 @@ export const SignInError = ({ error }: Props) => {
     OAuthAccountNotLinked: scopedT('oauthNotLinked'),
     default: scopedT('unknown'),
   }
+  console.log('Signin Error', { error, errors })
   return (
     <Alert status="error" variant="solid" rounded="md">
       {errors[error] ?? errors[error]}
