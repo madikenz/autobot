@@ -142,7 +142,7 @@ export const authOptions: AuthOptions = {
     session: async ({ session, user }) => {
       console.log('Session logs', { session, user })
       const userFromDb = user as User
-      await updateLastActivityDate(userFromDb)
+      // await updateLastActivityDate(userFromDb)
       return {
         ...session,
         user: userFromDb,
