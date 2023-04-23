@@ -150,18 +150,15 @@ export const authOptions: AuthOptions = {
     },
     signIn: async ({ account, user }) => {
       console.log('Auth logs', { account, user })
-      if (!account) return false
-      const isNewUser = !('createdAt' in user && isDefined(user.createdAt))
-      if (process.env.DISABLE_SIGNUP === 'true' && isNewUser && user.email) {
-        console.log('Here in DISABLE_SIGNUP if condition', {
-          DISABLE_SIGNUP: process.env.DISABLE_SIGNUP,
-          isNewUser,
-        })
-        // const { invitations, workspaceInvitations } =
-        //   await getNewUserInvitations(prisma, user.email)
-        // if (invitations.length === 0 && workspaceInvitations.length === 0)
-        //   return false
-      }
+      // if (!account) return false
+      // const isNewUser = !('createdAt' in user && isDefined(user.createdAt))
+      // if (process.env.DISABLE_SIGNUP === 'true' && isNewUser && user.email) {
+      //   console.log('Here in DISABLE_SIGNUP if condition', {DISABLE_SIGNUP: process.env.DISABLE_SIGNUP, isNewUser})
+      //   const { invitations, workspaceInvitations } =
+      //     await getNewUserInvitations(prisma, user.email)
+      //   if (invitations.length === 0 && workspaceInvitations.length === 0)
+      //     return false
+      // }
       // const requiredGroups = getRequiredGroups(account.provider)
       // if (requiredGroups.length > 0) {
       //   const userGroups = await getUserGroups(account)
