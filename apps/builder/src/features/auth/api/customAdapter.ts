@@ -21,15 +21,15 @@ export function customAdapter(p: PrismaClient): Adapter {
       if (!data.email)
         throw Error('Provider did not forward email but it is required')
       const user = { id: createId(), email: data.email as string }
-      const { invitations, workspaceInvitations } = await getNewUserInvitations(
-        p,
-        user.email
-      )
+      // const { invitations, workspaceInvitations } = await getNewUserInvitations(
+      //   p,
+      //   user.email
+      // )
       if (
         process.env.DISABLE_SIGNUP === 'true' &&
-        process.env.ADMIN_EMAIL !== user.email &&
-        invitations.length === 0 &&
-        workspaceInvitations.length === 0
+        process.env.ADMIN_EMAIL !== user.email
+        // invitations.length === 0 &&
+        // workspaceInvitations.length === 0
       )
         throw Error('New users are forbidden')
 
@@ -45,16 +45,17 @@ export function customAdapter(p: PrismaClient): Adapter {
             create: { name: 'Default', token: generateId(24) },
           },
           workspaces:
-            workspaceInvitations.length > 0
-              ? undefined
-              : {
-                  create: {
-                    role: WorkspaceRole.ADMIN,
-                    workspace: {
-                      create: newWorkspaceData,
-                    },
-                  },
+            // workspaceInvitations.length > 0
+            //   ? undefined
+            //   :
+            {
+              create: {
+                role: WorkspaceRole.ADMIN,
+                workspace: {
+                  create: newWorkspaceData,
                 },
+              },
+            },
           onboardingCategories: [],
         },
         include: {
