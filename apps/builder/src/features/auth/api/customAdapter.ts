@@ -103,7 +103,7 @@ export function customAdapter(p: PrismaClient): Adapter {
       (await p.user.delete({ where: { id } })) as AdapterUser,
     linkAccount: async (data) => {
       console.log('Here in the link account section', data)
-      await p.account.create({
+      p.account.create({
         data: {
           userId: data.userId,
           type: data.type,
