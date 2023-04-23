@@ -140,6 +140,7 @@ export const authOptions: AuthOptions = {
   },
   callbacks: {
     session: async ({ session, user }) => {
+      console.log('Session logs', { session, user })
       const userFromDb = user as User
       await updateLastActivityDate(userFromDb)
       return {
@@ -148,6 +149,7 @@ export const authOptions: AuthOptions = {
       }
     },
     signIn: async ({ account, user }) => {
+      console.log('Auth logs', { account, user })
       if (!account) return false
       const isNewUser = !('createdAt' in user && isDefined(user.createdAt))
       if (process.env.DISABLE_SIGNUP === 'true' && isNewUser && user.email) {
