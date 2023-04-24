@@ -54,7 +54,7 @@ export const getResultExample = authenticatedProcedure
       | null
 
     if (!typebot)
-      throw new TRPCError({ code: 'NOT_FOUND', message: 'Typebot not found' })
+      throw new TRPCError({ code: 'NOT_FOUND', message: 'Autobot not found' })
 
     const block = typebot.groups
       .flatMap((g) => g.blocks)

@@ -11,7 +11,7 @@ export default {
   upgrade: 'Upgrade',
   downgrade: 'Downgrade',
   'folders.createFolderButton.label': 'Create a folder',
-  'folders.createTypebotButton.label': 'Create a typebot',
+  'folders.createTypebotButton.label': 'Create a autobot',
   'folders.folderButton.deleteConfirmationMessage':
     'Are you sure you want to delete {folderName} folder? (Everything inside will be move to your dashboard)',
   'folders.typebotButton.live': 'Live',
@@ -20,12 +20,12 @@ export default {
   'folders.typebotButton.duplicate': 'Duplicate',
   'folders.typebotButton.delete': 'Delete',
   'folders.typebotButton.deleteConfirmationMessage':
-    'Are you sure you want to delete your typebot {typebotName}?',
+    'Are you sure you want to delete your autobot {typebotName}?',
   'folders.typebotButton.deleteConfirmationMessageWarning':
     "All its associated data will be deleted and won't be recoverable.",
   'account.apiTokens.heading': 'API tokens',
   'account.apiTokens.description':
-    'These tokens allow other apps to control your whole account and typebots. Be careful!',
+    'These tokens allow other apps to control your whole account and autobots. Be careful!',
   'account.apiTokens.createButton.label': 'Create',
   'account.apiTokens.deleteButton.label': 'Delete',
   'account.apiTokens.table.nameHeader': 'Name',
@@ -137,13 +137,13 @@ export default {
   'billing.usage.heading': 'Usage',
   'billing.usage.chats.heading': 'Chats',
   'billing.usage.chats.alert.soonReach':
-    "Your typebots are popular! You will soon reach your plan's chats limit. 🚀",
+    "Your autobots are popular! You will soon reach your plan's chats limit. 🚀",
   'billing.usage.chats.alert.updatePlan':
     'Make sure to update your plan to increase this limit and continue chatting with your users.',
   'billing.usage.chats.resetInfo': '(resets on 1st of every month)',
   'billing.usage.storage.heading': 'Storage',
   'billing.usage.storage.alert.soonReach':
-    "Your typebots are popular! You will soon reach your plan's storage limit. 🚀",
+    "Your autobots are popular! You will soon reach your plan's storage limit. 🚀",
   'billing.usage.storage.alert.updatePlan':
     'Make sure to update your plan in order to continue collecting uploaded files. You can also delete files to free up space.',
   'billing.limitMessage.brand': 'remove branding',

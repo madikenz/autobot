@@ -277,7 +277,7 @@ export const PlanComparisonTables = () => (
           <Tr>
             <TdWithTooltip
               text="Folders"
-              tooltip="Organize your typebots into folders"
+              tooltip="Organize your autobots into folders"
             />
             <Td />
             <Td>Unlimited</Td>

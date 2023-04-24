@@ -36,9 +36,9 @@ export const EasyEmbed = () => {
             fontSize={{ base: 'lg', xl: 'xl' }}
             data-aos="fade"
           >
-            Embedding your typebot in your applications is a walk in the park.
-            Typebot gives you several step-by-step platform-specific
-            instructions. Your typebot will always feel &quot;native&quot;.
+            Embedding your autobot in your applications is a walk in the park.
+            Autobot gives you several step-by-step platform-specific
+            instructions. Your autobot will always feel &quot;native&quot;.
           </Text>
           <Flex data-aos="fade">
             <Button

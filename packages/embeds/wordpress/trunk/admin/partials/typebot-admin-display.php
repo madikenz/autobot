@@ -1,7 +1,7 @@
 <div style="padding: 1rem; max-width: 700px">
   <h1 style="margin-bottom: 2rem;">Typebot Settings</h1>
   <ol style="margin-top: 1rem; margin-left: 1rem; font-size: 16px; display: flex; flex-direction: column;gap: 1rem">
-    <li>Generate your initialization snippet in the Share tab of your typebot.</li>
+    <li>Generate your initialization snippet in the Share tab of your autobot.</li>
     <li>If embedding as <strong>Standard</strong> container, paste the generated shortcode anywhere on your site.</li>
     <li>
       <form method="post" action="options.php">

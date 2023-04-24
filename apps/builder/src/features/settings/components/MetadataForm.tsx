@@ -110,7 +110,7 @@ export const MetadataForm = ({
         placeholder="GTM-XXXXXX"
         onChange={handleGoogleTagManagerIdChange}
         label="Google Tag Manager ID:"
-        moreInfoTooltip="Do not include it if you are embedding your typebot in an existing website. GTM should be installed in the parent website instead."
+        moreInfoTooltip="Do not include it if you are embedding your autobot in an existing website. GTM should be installed in the parent website instead."
       />
       <Stack>
         <HStack as={FormLabel} mb="0" htmlFor="head">
