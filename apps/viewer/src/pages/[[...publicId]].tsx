@@ -41,27 +41,24 @@ export const getServerSideProps: GetServerSideProps = async (
   try {
     console.log('Host', { host, forwardedHost, pathname })
     if (!host) return { props: {} }
-    // const viewerUrls = (getViewerUrl({ returnAll: true }) ?? '').split(',')
-    // const isMatchingViewerUrl =
-    //   env('E2E_TEST') === 'true'
-    //     ? true
-    //     : viewerUrls.some(
-    //         (url) =>
-    //           host.split(':')[0].includes(url.split('//')[1].split(':')[0]) ||
-    //           (forwardedHost &&
-    //             forwardedHost
-    //               .split(':')[0]
-    //               .includes(url.split('//')[1].split(':')[0]))
-    //       )
-    // const customDomain = `${forwardedHost ?? host}${
-    //   pathname === '/' ? '' : pathname
-    // }`
-    // const publishedTypebot = isMatchingViewerUrl
-    //   ? await getTypebotFromPublicId(context.query.publicId?.toString())
-    //   : await getTypebotFromCustomDomain(customDomain)
-    const publishedTypebot = await getTypebotFromPublicId(
-      context.query.publicId?.toString()
-    )
+    const viewerUrls = (getViewerUrl({ returnAll: true }) ?? '').split(',')
+    const isMatchingViewerUrl =
+      env('E2E_TEST') === 'true'
+        ? true
+        : viewerUrls.some(
+            (url) =>
+              host.split(':')[0].includes(url.split('//')[1].split(':')[0]) ||
+              (forwardedHost &&
+                forwardedHost
+                  .split(':')[0]
+                  .includes(url.split('//')[1].split(':')[0]))
+          )
+    const customDomain = `${forwardedHost ?? host}${
+      pathname === '/' ? '' : pathname
+    }`
+    const publishedTypebot = isMatchingViewerUrl
+      ? await getTypebotFromPublicId(context.query.publicId?.toString())
+      : await getTypebotFromCustomDomain(customDomain)
     console.log('AutoBot', publishedTypebot)
     const headCode = publishedTypebot?.settings.metadata.customHeadCode
     return {
