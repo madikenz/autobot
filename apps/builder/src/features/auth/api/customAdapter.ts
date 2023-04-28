@@ -25,6 +25,10 @@ export function customAdapter(p: PrismaClient): Adapter {
       //   p,
       //   user.email
       // )
+
+      console.log('process.env.DISABLE_SIGNUP', process.env.DISABLE_SIGNUP)
+      console.log('process.env.ADMIN_EMAIL', process.env.ADMIN_EMAIL)
+
       if (
         process.env.DISABLE_SIGNUP === 'true' &&
         process.env.ADMIN_EMAIL !== user.email
